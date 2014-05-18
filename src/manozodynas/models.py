@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, UserM
 from django.core import validators
 from django.db import models
 from django.utils import timezone
+from random import sample
 
 
 class User(AbstractBaseUser, PermissionsMixin):
@@ -43,3 +44,25 @@ class User(AbstractBaseUser, PermissionsMixin):
     def get_short_name(self):
         "Returns the short name for the user."
         return self.first_name
+
+class Word(models.Model):
+    word = models.CharField(max_length=255)
+
+
+    def __str__(self):
+        return self.word
+
+    @classmethod
+    def get_random_word(cls):
+        # Get all table contents
+        all_words = Word.objects.all()
+        # Get random word from existing ones
+        random_word = sample(all_words,1)
+        return random_word[0]
+    @classmethod
+    def get_random_words(cls, count):
+        #Get all table contents
+        all_words = Word.objects.all()
+        #Get random words from existing ones
+        random_words = sample(all_words, int(count))
+        return random_words
