@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{%if count == '1'%}
+		<title>Mano žodynas - atsitiktinis žodis</title>
+	{%else%}
+		<title>Mano žodynas - atsitiktiniai žodiai</title>
+	{%endif%}
+	<style type="text/css">
+		body{
+			background-color: #EEE;
+			text-align: center;
+			font-family: 'Ubuntu', sans-serif;
+		}
+		p.the_random_word{
+
+			font-size: 14px;
+		}
+	</style>
+</head>
+<body>
+	{%if count == '1'%}
+		<h1>Čia matome atsitiktinai sugeneruotą žodį iš "mano žodynas"</h1>
+	{%else%}
+		<h1>Čia matome atsitiktinai sugeneruotus {{count}} žodžius iš "mano žodynas"</h1>
+	{%endif%}
+		{%for r_word in random_words%}
+			<p class="the_random_word">
+			{{r_word.word}}
+			</p>
+		{%endfor%}
+</body>
+</html>
