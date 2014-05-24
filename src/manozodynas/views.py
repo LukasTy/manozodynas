@@ -1,14 +1,7 @@
-"""
-Prideti forma, kurioje galima butu prideti nauja irasa i db ir poto ta irasa atvaizduotu,
-sukurti testa, sio funkcionalumo patikrinmui
-viska i github
-"""
 from django.shortcuts import render
 from manozodynas.models import Word
 from django.http import HttpResponse
 from django.views.generic import CreateView
-
-
 
 def index_view(request):
     return render(request, 'manozodynas/index.html', {})
