@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add word</title>
+	<style type="text/css">
+		body{
+			background-color: #EEE;
+			text-align: center;
+			font-family: 'Ubuntu', sans-serif;
+		}
+		p.the_random_word{
+
+			font-size: 14px;
+		}
+		textarea{
+			height: 100px;
+			min-width: 200px;
+			max-width: 90%;
+			max-height: 500px; 
+		}
+	</style>
+</head>
+<body>
+    <form id="add_word-form" action="." method="post">{% csrf_token%}
+            {{ form.as_p }}
+            <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
