@@ -49,7 +49,7 @@ class Word(models.Model):
     word = models.CharField(max_length=255)
     translation = models.TextField(null=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.word + ' - ' + self.translation
 
     @classmethod
@@ -66,4 +66,3 @@ class Word(models.Model):
         #Get random words from existing ones
         random_words = sample(all_words, int(count))
         return random_words
-        
