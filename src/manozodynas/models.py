@@ -58,7 +58,7 @@ class Word(models.Model):
         all_words = Word.objects.all()
         # Get random word from existing ones
         random_word = sample(all_words,1)
-        return random_word[0]
+        return random_word
     @classmethod
     def get_random_words(cls, count):
         #Get all table contents
