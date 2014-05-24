@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mano žodynas - žodžiai</title>
+	<style type="text/css">
+		body{
+			background-color: #EEE;
+			text-align: center;
+			font-family: 'Ubuntu', sans-serif;
+		}
+		p.the_random_word{
+			font-size: 14px;
+		}
+		p#words_title{
+			letter-spacing: 5px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h1>Čia matome visus žodžius, esančius "mano žodynas"</h1>
+	<p id="words_title">Žodis - Vertimas</p>
+	{% for word in words %}
+	<p class="the_random_word">
+    	{{ word }}
+    </p>
+    {% endfor %}	
+</body>
+</html>
