@@ -12,12 +12,19 @@
 
 			font-size: 14px;
 		}
+		p#words_title{
+			letter-spacing: 5px;
+			font-weight: bold;
+		}
 	</style>
 </head>
 <body>
 	<h1>Čia matome atsitiktinai sugeneruotą žodį iš "mano žodynas"</h1>
+	<p id="words_title">Žodis - Vertimas</p>
 	<p id="the_random_word">
-		{{random_word}}
+	{%for r_word in random_word%}
+		{{r_word.word}} - {{r_word.translation}}
+	{%endfor%}
 	</p>
 </body>
 </html>
