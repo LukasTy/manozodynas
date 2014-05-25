@@ -16,6 +16,10 @@
 
 			font-size: 14px;
 		}
+		p#words_title{
+			letter-spacing: 5px;
+			font-weight: bold;
+		}
 	</style>
 </head>
 <body>
@@ -24,6 +28,7 @@
 	{%else%}
 		<h1>Čia matome atsitiktinai sugeneruotus {{count}} žodžius iš "mano žodynas"</h1>
 	{%endif%}
+	<p id="words_title">Žodis - Vertimas</p>
 		{%for r_word in random_words%}
 			<p class="the_random_word">
 			{{r_word.word}} - {{r_word.translation}}
