@@ -8,7 +8,7 @@ def index_view(request):
 
 def random_word_view(request):
 	random_word = Word.get_random_word()  
-	return render(request, 'manozodynas/random.html', {"random_word":random_word.word})
+	return render(request, 'manozodynas/random.html', {"random_word":random_word})
 
 def random_words_view(request, count):
 	random_words = Word.get_random_words(count)
